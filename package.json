@@ -2,10 +2,11 @@
   "name": "weather-cli",
   "version": "1.0.0",
   "description": "cli for getting weather",
-  "main": "index.js",
-  "bin": "./index.js",
-  "os": ["windows"],
-  "cpu": ["!arm"],
+  "main": "weather.js",
+  "bin": {
+    "weather": "weather.js"
+  },
+  "type":"module",
   "man": "./README.md",
   "engines": {
     "node": 14
@@ -28,5 +29,8 @@
   "bugs": {
     "url": "https://mytest.ru",
     "email": "Lis00909@gmail.com"
+  },
+  "dependencies": {
+    "axios": "^1.1.3"
   }
 }
