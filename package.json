@@ -1,0 +1,32 @@
+{
+  "name": "weather-cli",
+  "version": "1.0.0",
+  "description": "cli for getting weather",
+  "main": "index.js",
+  "bin": "./index.js",
+  "os": ["windows"],
+  "cpu": ["!arm"],
+  "man": "./README.md",
+  "engines": {
+    "node": 14
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "cli",
+    "weather"
+  ],
+  "author": "Aleksandr Breus",
+  "license": "ISC",
+  "homepage": "https://mytest.ru",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BAF00909/weather-cli"
+  },
+  "bugs": {
+    "url": "https://mytest.ru",
+    "email": "Lis00909@gmail.com"
+  }
+}
