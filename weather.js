@@ -2,6 +2,7 @@
 import { getArgs } from './helpers/args.js';
 import { getWeather } from './services/api.service.js';
 import { printError, printHelp, printSuccess } from './services/log.service.js';
+import { outputWeather } from './services/output.service.js';
 import { saveKeyValue, KEY_DICTIONARY } from './services/storage.service.js';
 
 const saveToken = async (token) => {
@@ -33,7 +34,7 @@ const saveCity = async (city) => {
 const getForcast = async () => {
     try {
         const weather = await getWeather(process.env.CITY);
-        console.log(weather);
+        outputWeather(weather);
     } catch (error) {
         if (error?.response?.status == 404) {
             printError('Не верно указан город');
