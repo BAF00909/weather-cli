@@ -21,6 +21,7 @@ const outputWeather = (weather) => {
             🌡️ Температура воздуха: ${Math.floor(weather.main.temp)}°C
             Ощущается как: ${Math.floor(weather.main.feels_like)}°C
             Ветер: ${weather.wind.speed}м/с
+            Влажность: ${weather.main. humidity}%
         `
     ));
 }

@@ -3,7 +3,7 @@ import { getArgs } from './helpers/args.js';
 import { getWeather } from './services/api.service.js';
 import { printError, printHelp, printSuccess } from './services/log.service.js';
 import { outputWeather } from './services/output.service.js';
-import { saveKeyValue, KEY_DICTIONARY } from './services/storage.service.js';
+import { saveKeyValue, KEY_DICTIONARY, getKeyValue } from './services/storage.service.js';
 
 const saveToken = async (token) => {
     if (!token.length) {
@@ -33,7 +33,8 @@ const saveCity = async (city) => {
 
 const getForcast = async () => {
     try {
-        const weather = await getWeather(process.env.CITY);
+        const city = process.env.CITY ?? await getKeyValue(KEY_DICTIONARY.CITY);
+        const weather = await getWeather(city);
         outputWeather(weather);
     } catch (error) {
         if (error?.response?.status == 404) {
@@ -57,7 +58,7 @@ const initCLI = () => {
     if (args.t) {
         return saveToken(args.t);
     }
-    getForcast();
+    return getForcast();
 };
 
 initCLI();
